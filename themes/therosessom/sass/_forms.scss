@@ -1,0 +1,206 @@
+/*--------------------------------------------------------------
+# Forms - Tailwind Compatible
+--------------------------------------------------------------*/
+
+/* Use @layer components for form styles to work with Tailwind */
+@layer components {
+  
+  /* Base form field styles */
+  .form-field,
+  input[type='text'],
+  input[type='email'],
+  input[type='url'],
+  input[type='password'],
+  input[type='search'],
+  input[type='tel'],
+  textarea {
+    @apply text-dark border border-dark bg-transparent;
+    @apply text-base leading-6 shadow-none;
+    padding: 0.75rem 1rem !important;
+    border-radius: 0 !important;
+    min-width: 100%;
+  }
+  
+  .form-field:focus,
+  input[type='text']:focus,
+  input[type='email']:focus,
+  input[type='url']:focus,
+  input[type='password']:focus,
+  input[type='search']:focus,
+  input[type='tel']:focus,
+  textarea:focus {
+    @apply border-primary-dark text-dark outline-none;
+  }
+  
+  /* Textarea specific styles */
+  textarea {
+    @apply w-full resize-none;
+    height: 155px !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Label and placeholder styles */
+  label,
+  input::placeholder,
+  textarea::placeholder {
+    @apply font-main text-base leading-6 font-normal text-dark;
+  }
+  
+  /* WPForms specific styles */
+  .wpforms-container-full .wpforms-form select,
+  .wpforms-container .wpforms-form .choices__inner {
+    @apply border-none bg-transparent shadow-none;
+    border-radius: 0 !important;
+    padding: 0.75rem 1rem !important;
+    height: auto !important;
+  }
+  
+  .wpforms-container .wpforms-form .choices__list--single {
+    padding: 0 !important;
+  }
+  
+  .wpforms-container .wpforms-form .choices__placeholder {
+    opacity: 1 !important;
+  }
+  
+  .wpforms-container-full .wpforms-form label.wpforms-error {
+    @apply text-primary;
+  }
+  
+  .wpforms-required-label {
+    display: none !important;
+  }
+  
+  .wpforms-confirmation-container-full {
+    margin: 24px auto !important;
+  }
+  
+  /* Dropdown specific styles */
+  .wpforms-container .wpforms-form .choices[data-type*="select-one"] {
+    @apply border border-dark;
+    height: 51px !important;
+  }
+}
+
+/* Contact Form Styles */
+@layer components {
+  .contact-form,
+  .additional-form {
+    .wpforms-container-full {
+      margin-bottom: 0;
+      
+      .wpforms-form input.wpforms-field-medium {
+        max-width: unset;
+      }
+      
+      .wpforms-form .wpforms-submit-container {
+        @apply text-center mb-6;
+      }
+    }
+  }
+  
+  .contact-form {
+    .contact-icon {
+      @apply fill-primary;
+    }
+    
+    .column:last-child {
+      ul {
+        @apply mt-4 md:mt-2;
+      }
+      
+      a,
+      a:visited {
+        @apply text-dark;
+      }
+      
+      a:hover {
+        @apply text-info;
+        
+        .contact-icon {
+          @apply fill-info;
+        }
+      }
+      
+      li {
+        @apply mb-4;
+        
+        a {
+          word-break: break-all;
+          @apply items-start;
+        }
+      }
+      
+      .scaling-svg-container {
+        @apply relative w-6 h-6 mr-4 flex-shrink-0;
+        padding-bottom: 24px;
+        
+        svg {
+          @apply absolute top-0 left-0 w-full h-full;
+        }
+      }
+    }
+  }
+  
+  .contact-form-mentorship {
+    scroll-margin-top: 8.5rem;
+    
+    button {
+      margin-top: 2.5rem !important;
+    }
+  }
+}
+
+/* MailChimp Styles */
+@layer components {
+  #mc_embed_signup {
+    h3 {
+      @apply mt-6 desktop-1024:mt-0;
+    }
+    
+    label {
+      @apply text-light text-xs;
+    }
+    
+    input[type='email'] {
+      @apply bg-light;
+      height: 55px !important;
+    }
+    
+    input[type='submit'] {
+      @apply text-light text-lg transition-custom;
+      border-radius: 50px !important;
+      margin-top: 1.2rem;
+    }
+    
+    input[type='submit']:hover {
+      @apply bg-light text-dark;
+    }
+    
+    .clear.foot {
+      @apply text-center desktop-1024:text-left;
+    }
+    
+    #mce-success-response {
+      @apply text-light text-xs bg-transparent;
+      padding: 5px 0px 0px;
+    }
+    
+    #mce-error-response {
+      @apply text-light text-xs;
+      padding: 5px 0px 0px;
+    }
+    
+    div.mce_inline_error {
+      @apply text-xs font-normal bg-transparent;
+      padding: 5px 0px 0px !important;
+    }
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+}

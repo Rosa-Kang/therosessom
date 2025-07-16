@@ -1,0 +1,61 @@
+/*--------------------------------------------------------------
+# Tabs - Tailwind Compatible
+--------------------------------------------------------------*/
+
+@layer components {
+  
+  /* Contact Form Tabs */
+  .contact-form-tabs {
+    @apply relative;
+    
+    .seeds-lg-r {
+      @apply absolute z-[2] top-[-5.5rem] right-4;
+      
+      @apply desktop-1024:right-24 desktop-1024:top-[-9.6rem];
+      @apply desktop-1920:right-24;
+    }
+    
+    .tabs {
+      li a p.button.is-dark,
+      li.is-active a p.button.is-dark {
+        min-width: 100% !important;
+      }
+      
+      li.is-active a p.button.is-dark,
+      li.is-active a p.button.is-dark:hover {
+        @apply bg-dark text-light;
+      }
+      
+      ul {
+        @apply flex-col items-start;
+        border-bottom: none !important;
+      }
+      
+      li.is-active a p.button.is-dark {
+        @apply bg-dark text-light;
+      }
+      
+      li.is-active a,
+      a {
+        border-bottom: none !important;
+      }
+      
+      li:first-of-type {
+        @apply md:pl-0;
+      }
+    }
+    
+    .tabs-content li[data-content] {
+      @apply hidden;
+      
+      ul,
+      ol {
+        @apply mb-6;
+      }
+    }
+    
+    .tabs-content li[data-content].is-active {
+      @apply block;
+    }
+  }
+}

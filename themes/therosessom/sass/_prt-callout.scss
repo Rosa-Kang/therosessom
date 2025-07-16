@@ -1,0 +1,116 @@
+/*--------------------------------------------------------------
+# Callout - Tailwind Compatible
+--------------------------------------------------------------*/
+
+@layer components {
+  
+  /* Callout */
+  .home,
+  .page-template-page-service,
+  .page-template-page-services {
+    .callout {
+      @apply relative;
+      
+      @apply desktop-1024:-mt-24;
+      
+      .container-m {
+        @apply desktop-1280:max-w-[1040px];
+        @apply desktop-1408:max-w-[1152px];
+        @apply desktop-1920:max-w-[1200px];
+      }
+      
+      p.subtitle {
+        @apply md:relative md:left-[-20px];
+        @apply desktop-1024:left-[-40px];
+      }
+      
+      .callout-wrapper {
+        @apply md:px-[4.32rem] md:pt-6 md:pb-10;
+      }
+      
+      .seeds-lg-l {
+        @apply absolute z-[2] top-[-5.5rem] left-4;
+        
+        @apply desktop-1024:left-6 desktop-1024:top-[-6rem];
+        @apply desktop-1920:left-10;
+      }
+    }
+  }
+  
+  .page-template-page-service,
+  .page-template-page-services {
+    .callout {
+      @apply mt-12;
+    }
+  }
+  
+
+  p.subtitle.is-family-primary {
+    @apply left-0 mb-2;
+  }
+  
+  span {
+    @apply block;
+  }
+  
+  /* Callout Image - Right */
+  .callout-image-right {
+    .columns {
+      @apply flex-col;
+      
+      @apply desktop-1024:flex-row-reverse;
+      
+      figure {
+        @apply desktop-1024:relative desktop-1024:left-[-5.5rem] desktop-1024:h-[510px];
+        
+        img {
+          @apply border-[10px] border-light object-cover;
+        }
+      }
+      
+      .callout-text-container {
+        @apply p-12;
+        
+        @apply desktop-1024:py-24 desktop-1024:px-[3.75rem] desktop-1024:pr-24;
+      }
+    }
+  }
+  
+  /* Callout Image - Left */
+  .callout-image-left {
+    .video {
+      @apply h-full w-full object-cover object-center;
+    }
+    
+    p.subtitle {
+      @apply relative -ml-6;
+      
+      @apply desktop-1024:-ml-10;
+      @apply desktop-1216:-ml-6;
+      @apply desktop-1280:-ml-12;
+      @apply desktop-1920:-ml-6;
+    }
+    
+    li {
+      @apply leading-6;
+    }
+    
+    .callout-image-left-wrapper {
+      @apply border-[10px] border-light relative z-[2] w-full h-[510px];
+      
+      @apply desktop-1024:right-[-5.5rem];
+    }
+    
+    .columns {
+      @apply flex-col;
+      
+      @apply desktop-1024:flex-row;
+    }
+    
+    .callout-text-container {
+      @apply p-12;
+      
+      @apply desktop-1024:py-24 desktop-1024:pl-[3.75rem] desktop-1024:pr-24;
+    }
+  }
+}

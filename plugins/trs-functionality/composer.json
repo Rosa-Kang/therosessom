@@ -1,0 +1,19 @@
+{
+    "name": "therosessom/trs-functionality",
+    "description": "Core functionality plugin for the website.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Therosessom",
+            "email": "your_email@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TRS_Functionality\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

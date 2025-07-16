@@ -1,0 +1,164 @@
+/*--------------------------------------------------------------
+# Layout - Tailwind Integration
+--------------------------------------------------------------*/
+
+/* Use @layer base for fundamental styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Use @layer components for reusable layout components */
+@layer components {
+  
+  /* Background utilities - complement Tailwind backgrounds */
+  .bg-light-bis {
+    background: #FDF7F2;
+  }
+  
+  .bg-success-dark {
+    background: #5E5E4A;
+  }
+  
+  .has-background-primary-light p.is-family-primary.subtitle {
+    @apply bg-primary text-light;
+  }
+  
+  .has-background-candles {
+    background: url(../../assets/images/thereas-banner.jpg) center / cover no-repeat fixed;
+  }
+  
+  /* Container variations - extend Tailwind containers */
+  .container-sm {
+    @apply mx-auto;
+    max-width: 768px;
+  }
+  
+  .container-m {
+    @apply mx-auto;
+    max-width: 900px;
+  }
+  
+  /* Content wrapper with responsive padding */
+  .content-wrapper {
+    @apply p-6 md:p-10 desktop-1920:p-24;
+  }
+  
+  .content-wrapper.pt-0 {
+    @apply pt-0 px-6 pb-6 md:pt-0 md:px-10 md:pb-10 desktop-1920:pt-0 desktop-1920:px-24 desktop-1920:pb-24;
+  }
+  
+  .content-wrapper.pb-0 {
+    @apply pt-6 px-6 pb-0 md:pt-10 md:px-10 md:pb-0 desktop-1920:pt-24 desktop-1920:px-24 desktop-1920:pb-0;
+  }
+  
+  /* Navigation specific content wrapper */
+  .main-navigation-container.content-wrapper,
+  .social-menu-wrapper > .content-wrapper {
+    @apply px-6 py-0 md:px-10 desktop-1920:px-24;
+  }
+  
+  /* Fixed header spacing */
+  .fixed-header {
+    margin-top: 96px; /* mobile menu height */
+    
+    @media (min-width: 1080px) {
+      margin-top: 166px; /* desktop menu height + banner */
+    }
+  }
+  
+  /* Responsive visibility helpers */
+  .mobile-wrapper {
+    @apply block desktop-1080:hidden;
+  }
+  
+  .desktop-wrapper {
+    @apply hidden desktop-1080:block;
+  }
+  
+  /* Utility classes that complement Tailwind */
+  .anchor {
+    @apply block relative invisible;
+    top: -96px; /* mobile menu height */
+    
+    @media (min-width: 1080px) {
+      top: -71px; /* desktop menu height */
+    }
+  }
+  
+  .text-col {
+    @apply md:columns-2;
+  }
+  
+  /* Decorative elements */
+  .bg-vine {
+    background: url(../../assets/images/bg-watermelon-vine.svg) center / cover no-repeat;
+    @apply w-[95%];
+  }
+  
+  .decorative-line {
+    @apply w-full h-24;
+    background: url(../../assets/images/line.svg) center / contain no-repeat;
+  }
+  
+  /* Content spacing adjustments */
+  .content-wrapper:has(.ig-feed-wrapper) {
+    @apply pt-2 pb-4;
+  }
+  
+  /* Legacy container styles - remove after full Tailwind migration */
+  .container {
+    @apply desktop-1024:max-w-[1344px] desktop-1216:max-w-[1152px] desktop-1408:max-w-[1344px];
+  }
+  
+  /* Has equal height utility */
+  .has-equal-height {
+    @apply desktop-1024:flex desktop-1024:h-full;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  /* Accessibility */
+  .visually-hidden {
+    @apply absolute w-px h-px overflow-hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
+  
+  .visually-hidden:focus {
+    @apply relative w-auto h-auto overflow-auto;
+    clip: auto;
+  }
+  
+  /* Layout utilities */
+  .w-100 {
+    @apply w-full;
+  }
+  
+  .h-100 {
+    @apply h-full;
+  }
+  
+  .m-auto {
+    @apply mx-auto my-0;
+  }
+  
+  .list-style-none {
+    @apply list-none m-0;
+  }
+  
+  .is-relative {
+    @apply relative;
+  }
+  
+  .line-through {
+    @apply line-through;
+  }
+  
+  /* WooCommerce specific */
+  .woocommerce span.onsale {
+    z-index: 3 !important;
+  }
+}

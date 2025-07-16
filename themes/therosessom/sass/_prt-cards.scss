@@ -1,0 +1,293 @@
+/*--------------------------------------------------------------
+# Cards - Tailwind Compatible
+--------------------------------------------------------------*/
+
+@layer components {
+  
+  /* Tri Cards */
+  .tri-cards {
+    @apply md:mt-24;
+    
+    .cards-wrapper {
+      @apply bg-light mx-[-0.75rem];
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
+      
+      @apply md:relative md:top-[-130px];
+      
+      .columns {
+        @apply m-0;
+      }
+    }
+    
+    div.column {
+      @apply relative;
+      
+      &:first-of-type:after,
+      &:nth-of-type(2):after {
+        content: '';
+        @apply block w-[55%] h-px mx-auto border-b border-dark;
+        
+        @apply md:border-b-0 md:border-r md:h-[55%] md:w-px md:absolute md:top-1/2 md:right-0 md:transform md:-translate-y-1/2;
+      }
+      
+      figure {
+        @apply mx-auto mt-6;
+        
+        img {
+          @apply w-24 h-24 object-contain;
+        }
+      }
+    }
+  }
+  
+  /* Cards - Rates */
+  .rates-gallery {
+    .card {
+      .card-content {
+        @apply md:min-h-48 md:flex md:flex-col md:justify-between;
+        
+        .button {
+          max-width: 212px;
+        }
+      }
+      
+      tr:nth-of-type(odd) {
+        @apply bg-primary-light;
+      }
+      
+      td {
+        @apply leading-6 px-3;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+        
+        &:first-of-type {
+          @apply w-[65%];
+        }
+      }
+    }
+  }
+  
+  .rates {
+    .columns {
+      @apply flex-col desktop-1024:flex-row;
+      
+      .rates-image-container {
+        @apply relative z-0 -ml-10 -mt-32;
+        
+        @apply md:-ml-[280px];
+        @apply desktop-1024:-ml-12 desktop-1024:mt-0;
+        @apply desktop-1216:-ml-38;
+        
+        .rates-image-wrapper {
+          @apply h-0 pt-[80%] w-[120%];
+          
+          @apply md:pt-[60%] md:w-[150%];
+          @apply desktop-1024:pt-[110%] desktop-1024:w-[110%];
+          @apply desktop-1216:pt-[120%] desktop-1216:w-[120%];
+        }
+      }
+      
+      .card {
+        @apply relative z-[1] max-w-[650px] mx-auto;
+        
+        @apply desktop-1024:mx-0;
+        
+        .card-content {
+          @apply md:p-12 md:px-24;
+          
+          tr {
+            &:nth-of-type(odd) {
+              @apply bg-primary-light;
+            }
+            
+            td {
+              @apply px-4;
+              padding-top: 0.1rem;
+              padding-bottom: 0.1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* Cards - Workshops */
+  .cards-workshops {
+    figure img {
+      @apply w-auto mx-auto;
+    }
+    
+    .card-content {
+      @apply desktop-1280:p-3;
+    }
+  }
+  
+  /* Cards - Careers */
+  .text-icon-left,
+  .text-icon-left-bottom {
+    .seeds-m {
+      @apply absolute z-[2] left-1/2 transform -translate-x-1/2;
+      margin-top: -3rem;
+      
+      @apply desktop-1024:w-[75px] desktop-1024:h-[159px] desktop-1024:-mt-3;
+    }
+    
+    .text-icon-wrapper {
+      @apply p-10;
+      
+      @apply md:p-24;
+      
+      .card {
+        @apply bg-transparent flex-col;
+        
+        @apply desktop-1024:flex-row;
+        
+        .card-image {
+          @apply mx-auto;
+          
+          @apply desktop-1024:mx-0;
+          
+          figure {
+            @apply w-12 h-auto;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Cards - Recent Blogs */
+  .cards-recent-posts {
+    figure img {
+      @apply object-cover;
+    }
+  }
+  
+  /* Cards - Contact Info */
+  .cards-contact-info {
+    .card .card-content {
+      @apply py-6 px-0;
+      
+      @apply desktop-1216:p-6;
+      
+      tr {
+        &:nth-of-type(odd) {
+          @apply bg-primary-light;
+        }
+        
+        td {
+          @apply px-4;
+          padding-top: 0.1rem;
+          padding-bottom: 0.1rem;
+        }
+      }
+      
+      p.is-family-primary.subtitle {
+        @apply bg-primary text-light block;
+      }
+    }
+  }
+  
+  /* Cards - Blog */
+  .cards-blog {
+    img {
+      @apply object-cover;
+    }
+  }
+  
+  /* Cards - Local Love */
+  .cards-local-love {
+    li {
+      line-height: 1.75;
+    }
+  }
+  
+  p.local-love-description {
+    @apply w-[297px] h-20 mx-auto;
+  }
+  
+  /* Cards - Team Members */
+  .cards-team-members {
+    figure img {
+      @apply object-cover;
+    }
+    
+    .container {
+      .modal-close {
+        @apply absolute bg-primary;
+        top: 20px !important;
+        right: 20px !important;
+      }
+      
+      .modal-content {
+        @apply w-full;
+        
+        .card-entry-content {
+          @apply md:flex md:flex-row;
+          
+          figure img {
+            @apply md:w-[170px] md:h-[170px];
+          }
+        }
+        
+        .card-content {
+          @apply text-center p-0;
+          
+          @apply md:text-left md:min-w-[325px] md:px-6;
+        }
+      }
+    }
+    
+    .text-flex {
+      @apply flex-col;
+      
+      @apply md:flex-row md:items-end;
+      
+      p.mice-type {
+        @apply mb-0;
+      }
+    }
+    
+    .highlights {
+      @apply max-w-[277px] mx-auto;
+      
+      p {
+        @apply max-w-[10ch] text-center;
+        
+        &::before {
+          content: '';
+          @apply block mx-auto mb-1;
+          background: url(../../assets/images/icon-heart.svg);
+          background-size: 17px 15px;
+          @apply w-4 h-4;
+        }
+      }
+    }
+    
+    .card-scroll-wrapper {
+      @apply md:h-[269px] md:overflow-auto md:text-left;
+      
+      /* Firefox */
+      scrollbar-width: thin !important;
+      scrollbar-color: #fef3f1 #eab3b0 !important;
+      
+      /* Chrome, Edge, and Safari */
+      &::-webkit-scrollbar {
+        width: 3px !important;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: #fef3f1 !important;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background-color: #fef3f1 !important;
+        border-radius: 20px !important;
+        border: 3px solid #eab3b0 !important;
+      }
+      
+      li {
+        @apply leading-6;
+      }
+    }
+  }
+}

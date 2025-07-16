@@ -1,0 +1,344 @@
+/*--------------------------------------------------------------
+# Typography - Tailwind Compatible
+--------------------------------------------------------------*/
+
+@layer base {
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    @apply text-dark font-main text-base leading-6;
+  }
+}
+
+@layer components {
+  
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply clear-both;
+  }
+  
+  /* Copy */
+  p {
+    @apply mb-6;
+  }
+  
+  dfn,
+  cite,
+  em,
+  i {
+    @apply italic;
+  }
+  
+  blockquote {
+    @apply my-10;
+  }
+  
+  address {
+    @apply mb-6;
+  }
+  
+  pre {
+    @apply bg-gray-100 font-pre text-sm leading-7 mb-7 max-w-full overflow-auto p-7;
+  }
+  
+  code,
+  kbd,
+  tt,
+  var {
+    @apply font-code text-sm;
+  }
+  
+  abbr,
+  acronym {
+    @apply border-b border-dotted border-gray-600 cursor-help;
+  }
+  
+  mark,
+  ins {
+    @apply bg-yellow-200;
+    text-decoration: none;
+  }
+  
+  big {
+    @apply text-lg;
+  }
+  
+  /* Custom Typography Styles */
+  p.has-primary-underline {
+    @apply text-primary underline;
+    text-decoration-color: #5E5E4A;
+  }
+  
+  .header-2,
+  h1,
+  h2,
+  h3 {
+    @apply font-bold font-normal;
+    font-family: 'CaliforniaPalms-Script', serif;
+  }
+  
+  h1 {
+    @apply text-dark font-accent text-6xl leading-tight;
+    font-size: 60px;
+    line-height: 65px;
+  }
+  
+  .text-shadow-none {
+    text-shadow: none;
+  }
+  
+  h2,
+  .content h2 {
+    @apply text-dark font-accent font-normal;
+    font-size: 35px;
+    line-height: 45px;
+  }
+  
+  h2.is-family-secondary {
+    font-size: 60px;
+    line-height: 1;
+    
+    @apply mobile-1216:text-7xl mobile-1216:leading-tight;
+  }
+  
+  .subtitle,
+  .blog h3.subtitle,
+  blockquote p {
+    @apply text-primary leading-tight;
+    font-family: 'CaliforniaPalms-Script', serif !important;
+    font-size: 85px !important;
+    line-height: 1.25 !important;
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "kern" 1;
+  }
+  
+  blockquote p {
+    @apply text-primary;
+  }
+  
+  p.is-family-primary.subtitle,
+  h2.is-family-primary.subtitle {
+    @apply font-main font-normal uppercase inline-block bg-primary-light;
+    font-size: 16px !important;
+    line-height: 25px !important;
+    padding: 0 0.5rem;
+  }
+  
+  h3,
+  .content h3,
+  .numeric-pagination li a,
+  .faq-title {
+    @apply text-dark font-accent font-normal;
+    font-size: 25px;
+    line-height: 30px;
+  }
+  
+  h3.is-family-secondary {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: 1.5px;
+    @apply capitalize;
+    
+    @apply mobile-1216:text-7xl mobile-1216:tracking-normal;
+  }
+  
+  h4 {
+    @apply font-main uppercase;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  
+  h4.is-family-secondary {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  
+  .entry-meta {
+    @apply text-dark;
+    font-size: 18px;
+    line-height: 23px;
+    
+    @apply mobile-1216:text-2xl mobile-1216:leading-8;
+  }
+  
+  p,
+  li {
+    @apply font-main font-normal text-dark;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  
+  p.subtitle.has-text-dark {
+    font-size: 55px !important;
+  }
+  
+  li {
+    line-height: 2.5;
+  }
+  
+  a.has-text-dark:hover {
+    @apply text-primary underline;
+  }
+  
+  .mice-type {
+    @apply text-xs leading-tight;
+  }
+  
+  .intro p.subtitle {
+    @apply relative;
+    left: -15px;
+    
+    @apply md:left-[-35px];
+  }
+  
+  .directions-text {
+    @apply flex items-center justify-center;
+    margin: 2.5rem 0 1.875rem 0;
+    
+    a {
+      @apply text-primary;
+    }
+    
+    &::before {
+      content: '';
+      @apply inline-flex mr-1 flex-shrink-0;
+      background: url(../../assets/images/icon-location-pin.svg) center / contain no-repeat;
+      width: 13px;
+      height: 16px;
+    }
+    
+    &:hover {
+      @apply underline;
+    }
+  }
+  
+  .single-workshop {
+    .directions-text {
+      @apply justify-start;
+    }
+    
+    li {
+      line-height: 25px;
+    }
+  }
+  
+  .page-template-page-service .intro p.subtitle {
+    @apply pt-4 pb-2 pl-3;
+  }
+  
+  /* Navigation Typography */
+  #mobile-menu li a {
+    @apply text-dark font-main uppercase;
+    font-size: 16px;
+    line-height: 25px;
+    
+    &:hover {
+      @apply text-primary;
+    }
+  }
+  
+  #menu-social-mobile-menu li a {
+    @apply text-primary;
+    font-size: 19px;
+    line-height: 26px;
+    
+    &:hover {
+      @apply text-success;
+    }
+  }
+  
+  #primary-menu li a {
+    @apply text-dark font-main font-normal uppercase;
+    font-size: 16px;
+    line-height: 25px;
+    
+    &:hover {
+      @apply text-primary;
+    }
+  }
+  
+  #menu-social-menu li a {
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: initial;
+  }
+  
+  .contact-menu a {
+    @apply font-semibold;
+  }
+  
+  .sub-menu li a {
+    text-transform: capitalize !important;
+    line-height: 18px !important;
+  }
+  
+  /* Footer Typography */
+  footer p.is-underlined {
+    text-underline-offset: 3px;
+  }
+  
+  .footer-text {
+    @apply whitespace-nowrap;
+    font-size: 14px;
+    line-height: 19px;
+    
+    @apply md:text-sm md:leading-5;
+  }
+  
+  .privacy-terms-wrapper,
+  .copyright-wrapper {
+    .footer-text,
+    li,
+    a {
+      @apply text-xs leading-none;
+    }
+  }
+  
+  /* Background Variations */
+  .has-background-dark {
+    h2,
+    h3,
+    h4,
+    p,
+    li,
+    ol,
+    span {
+      @apply text-light;
+    }
+    
+    a,
+    a:visited {
+      @apply text-light;
+      
+      &:hover {
+        @apply text-primary;
+        
+        svg,
+        .social-icon {
+          @apply fill-primary;
+        }
+      }
+      
+      .social-icon {
+        @apply w-5 fill-light transition-all;
+      }
+    }
+  }
+  
+  .has-background-success {
+    .subtitle {
+      @apply text-success-dark;
+    }
+    
+    .is-family-primary.subtitle {
+      @apply text-light bg-success-dark;
+    }
+  }
+}
