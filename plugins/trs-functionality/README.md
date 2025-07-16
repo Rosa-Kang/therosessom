@@ -1,7 +1,8 @@
-# TRS Functionality Plugin
+##  TRS Functionality Plugin
 This plugin provides core functionality for the website, designed to be theme-independent and easily scalable.
 
 ## Folder Structure
+```
 └── trs-functionality/
     ├── src/
     │   ├── Core/
@@ -17,6 +18,7 @@ This plugin provides core functionality for the website, designed to be theme-in
     ├── composer.json           # New: For autoloading
     ├── trs-functionality.php   # Renamed & updated main plugin file
     └── README.md               # Updated
+```
 
 ## Installation
 
